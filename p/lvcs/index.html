@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラブコメスイッチ（恋爱喜剧突转）</title>
+    <style>
+        * {
+            transition: all .3s ease;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .logo_place {
+            min-height: 100vh;
+            width: auto;
+            background: plum;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+
+        .nopl1 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl2 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 20%);
+            transform-origin: center center;
+        }
+
+        .nopl3 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(5%, 90%);
+            transform-origin: center center;
+        }
+
+        .nopl4 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-105%, 90%);
+            transform-origin: center center;
+        }
+
+        .nopl5 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-180%, 275%);
+            transform-origin: center center;
+        }
+
+        .nopl6 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-80%, 275%);
+            transform-origin: center center;
+        }
+
+        .nopl7 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(40%, 275%);
+            transform-origin: center center;
+        }
+
+        .nopl8 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-170%, 425%);
+            transform-origin: center center;
+        }
+
+        .nopl9 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-70%, 425%);
+            transform-origin: center center;
+        }
+
+        .nopl10 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(30%, 425%);
+            transform-origin: center center;
+        }
+
+        .img_title {
+            height: 99.8vh;
+            -webkit-touch-callout: none;
+        }
+
+        @keyframes a {
+            0% {
+                transform: translate(-50%, 30%);
+            }
+            50% {
+                transform: translate(-50%, 18%);
+            }
+            100% {
+                transform: translate(-50%, 30%);
+            }
+        }
+
+        @keyframes b {
+            0% {
+                transform: translate(-50%, 90%) scale(0.95);
+            }
+            50% {
+                transform: translate(-50%, 90%) scale(1.05);
+            }
+            100% {
+                transform: translate(-50%, 90%) scale(0.95);
+            }
+        }
+
+        .img_movement {
+            animation: a 13s alternate infinite;
+            height: 40vh;
+            -webkit-touch-callout: none;
+        }
+
+        .img_dlmain {
+            /*
+                animation: b 4s alternate infinite;
+            */
+            height: 10vh;
+            -webkit-touch-callout: none;
+        }
+
+        .img_dlsub {
+            /*
+                animation: b 4s alternate infinite;
+            */
+            height: 7.5vh;
+            -webkit-touch-callout: none;
+        }
+
+        .pbtn1:hover {
+            transform: translate(5%, 90%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn2:hover {
+            transform: translate(-105%, 90%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn3:hover {
+            transform: translate(-180%, 275%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn4:hover {
+            transform: translate(-80%, 275%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn5:hover {
+            transform: translate(40%, 275%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn6:hover {
+            transform: translate(-170%, 425%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn7:hover {
+            transform: translate(-70%, 425%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+
+        .pbtn8:hover {
+            transform: translate(30%, 425%) translateY(-5px);
+            filter: grayscale(40%) opacity(90%);
+        }
+    </style>
+
+    <script>
+        function jumpto(url){
+            window.open(url)
+        }
+    </script>
+</head>
+<body oncontextmenu="return false;">
+    <div class="logo_place">
+        <img
+            src="./img/title1.png"
+            alt=""
+            class="img_title nopl1"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+        >
+        <img
+            src="./img/movement1.png"
+            alt=""
+            class="img_movement nopl2"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+        >
+        <!-- 以下是按钮们 ~ -->
+        <img
+            src="./img/pbtn2.png"
+            alt=""
+            class="img_dlmain nopl3 pbtn1"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://src.yunaitang.top/patch/parallellovecomedy%E6%9E%84%E5%BB%BA20260630.tpatch")'
+        >
+        <img
+            src="./img/pbtn3.png"
+            alt=""
+            class="img_dlmain nopl4 pbtn2"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://novelgame.jp/games/show/14081?lang=JA")'
+        >
+
+            <!-- -->
+
+        <img
+            src="./img/pbtn8.png"
+            alt=""
+            class="img_dlsub nopl5 pbtn3"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://qm.qq.com/q/2gmnimu18g")'
+        >
+        <img
+            src="./img/pbtn7.png"
+            alt=""
+            class="img_dlsub nopl6 pbtn4"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("credits.html")'
+        >
+        <img
+            src="./img/pbtn6.png"
+            alt=""
+            class="img_dlsub nopl7 pbtn5"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("info.html")'
+        >
+
+            <!-- -->
+
+        <img
+            src="./img/pbtn5.png"
+            alt=""
+            class="img_dlsub nopl8 pbtn6"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("#")'
+        >
+        <img
+            src="./img/pbtn4.png"
+            alt=""
+            class="img_dlsub nopl9 pbtn7"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("authorize.html")'
+        >
+        <img
+            src="./img/pbtn1.png"
+            alt=""
+            class="img_dlsub nopl10 pbtn8"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://piku.page/@hokori_4649_")'
+        >
+
+        <span>Copyright Kyoka Transtation 2025~2026</span>
+    </div>
+</body>
+</html>
