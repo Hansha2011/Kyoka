@@ -83,6 +83,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-170%, 425%);
+            filter: grayscale(90%);
             transform-origin: center center;
         }
 
@@ -180,7 +181,9 @@
 
         .pbtn6:hover {
             transform: translate(-170%, 425%) translateY(-5px);
+            /*
             filter: grayscale(40%) opacity(90%);
+                      */
         }
 
         .pbtn7:hover {
@@ -256,7 +259,7 @@
             draggable="false"
             oncontextmenu="return false;"
             onselectstart="return false;"
-            onclick='jumpto("cradits.html")'
+            onclick='jumpto("credits.html")'
         >
         <img
             src="./img/pbtn6.png"
@@ -270,6 +273,7 @@
 
             <!-- -->
 
+
         <img
             src="./img/pbtn5.png"
             alt=""
@@ -277,8 +281,9 @@
             draggable="false"
             oncontextmenu="return false;"
             onselectstart="return false;"
-            onclick='jumpto("#")'
+            onclick='alert("施工中，暂不开放！")'
         >
+
         <img
             src="./img/pbtn4.png"
             alt=""

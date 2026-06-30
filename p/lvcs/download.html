@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>下载选择</title>
+    <title>下载</title>
     <style>
         * {
             transition: all .3s ease;
@@ -22,13 +22,18 @@
             width: 50%;
         }
 
-        a {
+        .ds {
+            border: 3px solid powderblue;
+            border-radius: 8px;
             text-decoration: none;
             color: #000000;
+            padding: 10px;
+            background: pink;
+            width: 30%;
         }
 
-        a:hover {
-            transform: scale(1.1);
+        .ds:hover {
+            transform: translateY(-3px);
         }
 
     </style>
@@ -42,9 +47,13 @@
 <body oncontextmenu="return false;">
     <center class="logo_place">
         <div style="padding: 30px;">
-            <span style="font-size: 36px;">
-                <a href="https://src.yunaitang.top/patch/parallellovecomedy%E6%9E%84%E5%BB%BA20260630.tpatch">直链</a><br>
-                <a href="https://pan.baidu.com/s/1ImSuwYt1qlly19W9Mcw6Dg?pwd=LVCS">百度网盘</a><br>
+            <span style="font-size: 48px;">在下载之前，请先阅读安装教学！！</span><br>
+            <img src="./img/307.png" alt="">
+            <img src="./img/308.png" alt=""><br>
+            <br><br>
+            <span style="font-size: 26px;">
+                <div class="ds" onclick="jumpto('https://src.yunaitang.top/patch/parallellovecomedy.zip')">直链</div><br>
+                <div class="ds" onclick="jumpto('https://pan.baidu.com/s/1ImSuwYt1qlly19W9Mcw6Dg?pwd=LVCS')">百度网盘</div><br>
             </span>
         </div>
     </center>
