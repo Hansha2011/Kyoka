@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ラブコメスイッチ（恋爱喜剧突转）</title>
     <style>
+        @import url("https://fontsapi.zeoseven.com/811/main/result.css");
+
         * {
             transition: all .3s ease;
         }
@@ -103,6 +105,13 @@
             transform-origin: center center;
         }
 
+        .noplt1 {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: 12345;
+        }
+
         .img_title {
             height: 99.8vh;
             -webkit-touch-callout: none;
@@ -133,7 +142,7 @@
         }
 
         .img_movement {
-            animation: a 13s alternate infinite;
+            animation: a 8s alternate infinite;
             height: 40vh;
             -webkit-touch-callout: none;
         }
@@ -144,6 +153,7 @@
             */
             height: 10vh;
             -webkit-touch-callout: none;
+            z-index: 0;
         }
 
         .img_dlsub {
@@ -194,6 +204,10 @@
         .pbtn8:hover {
             transform: translate(30%, 425%) translateY(-5px);
             filter: grayscale(40%) opacity(90%);
+        }
+
+        .font_pixel1 {
+            font-family: "ChangBanDianSong 16 SC";
         }
     </style>
 
@@ -303,7 +317,7 @@
             onclick='jumpto("https://piku.page/@hokori_4649_")'
         >
 
-        <span>Copyright Kyoka Transtation 2025~2026</span>
+        <span class="font_pixel1 noplt1">Copyright 晓柯同文馆 2025~2026</span>
     </div>
 </body>
 </html>
