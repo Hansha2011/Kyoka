@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载</title>
+    <style>
+        * {
+            transition: all .3s ease;
+        }
+
+        body {
+            margin: 0;
+            background: plum;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .logo_place {
+            min-height: 100vh;
+            min-height: 100dvh;
+            width: auto;
+            padding: 30px 16px;
+            box-sizing: border-box;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            touch-action: manipulation;
+        }
+
+        .ds {
+            display: inline-block;
+            border: 2px solid #9b6b9e;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #4a2040;
+            padding: 12px 28px;
+            background: #e6cce6;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        @media (hover: hover) {
+            .ds:hover {
+                transform: translateY(-3px);
+            }
+        }
+
+    </style>
+
+    <script>
+        function jumpto(url){
+            window.open(url)
+        }
+    </script>
+</head>
+<body oncontextmenu="return false;">
+    <center class="logo_place">
+        <div style="padding: 30px;">
+            <span style="font-size: 48px;">在下载之前，请先阅读安装教学！！</span><br>
+            <img src="./img/307.png" alt="" onclick="jumpto('https://novelgame.jp/games/show/14565')">
+            <img src="./img/308.png" alt=""><br>
+            <br><br>
+            <span style="font-size: 26px;">
+                <div class="ds" onclick="jumpto('https://src.yunaitang.top/patch/AloneTogetherAtSea.tpatch')">直链</div><br>
+            </span>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </center>
+</body>
+</html>

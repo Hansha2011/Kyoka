@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>只有两人的海</title>
+    <style>
+        @import url("https://fontsapi.zeoseven.com/811/main/result.css");
+
+        * {
+            transition: all .3s ease;
+        }
+
+        body {
+            margin: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            touch-action: manipulation;
+        }
+
+        .logo_place {
+            min-height: 100vh;
+            min-height: 100dvh;
+            width: auto;
+            background: linear-gradient(180deg, rgb(9,9,9) 0%, rgb(15,16,25) 35%, rgb(25,25,25) 100%);
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .nopl1 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl3 {
+            position: fixed;
+            top: 60vh;
+            left: 33vw;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl4 {
+            position: fixed;
+            top: 60vh;
+            left: 67vw;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl5 {
+            position: fixed;
+            top: 72vh;
+            left: 33vw;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl6 {
+            position: fixed;
+            top: 72vh;
+            left: 67vw;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl8 {
+            position: fixed;
+            top: 84vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .noplt1 {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: 12345;
+        }
+
+        .img_title {
+            height: 99.8vh;
+            height: 99.8dvh;
+            -webkit-touch-callout: none;
+        }
+
+        .img_dlmain {
+            height: 10vh;
+            -webkit-touch-callout: none;
+        }
+
+        .img_dlsub {
+            height: 10vh;
+            -webkit-touch-callout: none;
+        }
+
+        .menu_btn {
+            position: fixed;
+            top: 2vh;
+            right: 2vh;
+            height: 5vh;
+            z-index: 9999;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+        }
+
+        @media (hover: hover) {
+            .pbtn1:hover {
+                transform: translate(-50%, calc(-50% - 5px));
+                filter: grayscale(40%) opacity(90%);
+            }
+
+            .pbtn2:hover {
+                transform: translate(-50%, calc(-50% - 5px));
+                filter: grayscale(40%) opacity(90%);
+            }
+
+            .pbtn3:hover {
+                transform: translate(-50%, calc(-50% - 5px));
+                filter: grayscale(40%) opacity(90%);
+            }
+
+            .pbtn4:hover {
+                transform: translate(-50%, calc(-50% - 5px));
+                filter: grayscale(40%) opacity(90%);
+            }
+
+            .pbtn6:hover {
+                transform: translate(-50%, calc(-50% - 5px));
+                filter: grayscale(40%) opacity(90%);
+            }
+
+            .menu_btn:hover {
+                transform: scale(1.1);
+                filter: brightness(1.15);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu_btn {
+                height: 5vh;
+                top: 1.5vh;
+                right: 1.5vh;
+            }
+
+            .img_dlmain {
+                height: 6vh;
+            }
+
+            .img_dlsub {
+                height: 6vh;
+            }
+
+            .nopl3 {
+                top: 55vh;
+                left: 50vw;
+            }
+
+            .nopl4 {
+                top: 64vh;
+                left: 50vw;
+            }
+
+            .nopl5 {
+                top: 73vh;
+                left: 50vw;
+            }
+
+            .nopl6 {
+                top: 82vh;
+                left: 50vw;
+            }
+
+            .nopl8 {
+                top: 91vh;
+                left: 50vw;
+            }
+        }
+
+        .font_pixel1 {
+            font-family: "ChangBanDianSong 16 SC";
+            color: #fff;
+        }
+
+        footer {
+            background: rgb(148, 103, 148);
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .popup-overlay.show {
+            display: flex;
+        }
+
+        .popup-overlay img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            -webkit-touch-callout: none;
+        }
+    </style>
+
+    <script>
+        function jumpto(url){
+            window.open(url)
+        }
+
+        function showPopup(src) {
+            var overlay = document.getElementById('popupOverlay');
+            var img = document.getElementById('popupImg');
+            img.src = src;
+            overlay.classList.add('show');
+        }
+
+        function hidePopup() {
+            var overlay = document.getElementById('popupOverlay');
+            overlay.classList.remove('show');
+        }
+    </script>
+</head>
+<body oncontextmenu="return false;">
+    <div class="logo_place">
+        <img
+            src="./img/無題258_20260811220735.png"
+            alt=""
+            class="img_title nopl1"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+        >
+        <img
+            src="./img/patch_download.png"
+            alt=""
+            class="img_dlmain nopl3 pbtn1"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("./download.html")'
+        >
+        <img
+            src="./img/game_download.png"
+            alt=""
+            class="img_dlmain nopl4 pbtn2"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://novelgame.jp/games/show/14565")'
+        >
+        <img
+            src="./img/discussion_group.png"
+            alt=""
+            class="img_dlsub nopl5 pbtn3"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://qm.qq.com/q/gXmDvzs4P6")'
+        >
+        <img
+            src="./img/credit.png"
+            alt=""
+            class="img_dlsub nopl6 pbtn4"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick="showPopup('./img/6463f222f2af34b218de140f16ab6e8b_720.png')"
+        >
+        <img
+            src="./img/go_to_parallellovecomedy.png"
+            alt=""
+            class="img_dlsub nopl8 pbtn6"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("../lvcs/index.html")'
+        >
+
+        <span class="font_pixel1 noplt1">Copyright 晓柯同文馆 2025~2026</span>
+
+        <img
+            src="./img/menu_button_close_backlog.png"
+            alt=""
+            class="menu_btn"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("../../index.html")'
+        >
+    </div>
+
+    <div id="popupOverlay" class="popup-overlay" onclick="hidePopup()">
+        <img id="popupImg" src="" alt="" draggable="false" oncontextmenu="return false;" onselectstart="return false;">
+    </div>
+</body>
+</html>

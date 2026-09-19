@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>晓柯同文馆</title>
+        <style>
+            * {
+                transition: all .3s;
+            }
+            body {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 110vh;
+                
+            }
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 67676767;
+                width: 100%;
+                background: #d4d4d428;
+                display: inline-block;
+            }
+
+            nav > ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav > ul.l {
+                float: left;
+            }
+
+            nav > ul.r {
+                float: right;
+            }
+
+            nav > ul > li {
+                display: flex;
+                padding: 9px 12px;
+                min-height: 54px;
+                max-height: 54px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav > ul > li > img{
+                display: block;
+                height: 40px;
+            }
+
+            nav > ul > li > select{
+                display: block;
+                background: none;
+                border: none;
+                font-size: 15px;
+                outline: none;
+            }
+
+            nav > ul > li:hover {
+                background: #79797928;
+            }
+
+            img {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-user-drag: none;
+                -khtml-user-drag: none;
+                -moz-user-drag: none;
+                -o-user-drag: none;
+            }
+
+            .main {
+                padding-top: 72px;
+                flex: 1;
+            }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 48px 0 32px;
+            }
+
+            .hero_img {
+                height: 120px;
+            }
+
+            .hero_text {
+                font-size: 22px;
+                color: #4a4a4a;
+                margin-top: 12px;
+                letter-spacing: 6px;
+            }
+
+            .projects {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 10%;
+                max-width: 860px;
+                margin: 0 auto 40px;
+            }
+
+            .card {
+                position: relative;
+                height: 180px;
+                border-radius: 6px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                cursor: pointer;
+            }
+
+            .card_bg {
+                position: absolute;
+                inset: 0;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .card_overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(20, 20, 30, 0.55);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+            }
+
+            .card_content {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                padding: 0 32px;
+                box-sizing: border-box;
+            }
+
+            .card_left {
+                display: flex;
+                align-items: center;
+            }
+
+            .card_thumb {
+                height: 100px;
+                border-radius: 4px;
+            }
+
+            .card_title {
+                font-size: 26px;
+                color: #fff;
+                font-weight: bold;
+                letter-spacing: 3px;
+            }
+
+            .card_btn {
+                display: inline-block;
+                padding: 8px 32px;
+                background: rgba(255,255,255,0.9);
+                color: #333;
+                text-decoration: none;
+                border-radius: 3px;
+                font-size: 15px;
+                letter-spacing: 2px;
+                flex-shrink: 0;
+            }
+
+            .card_btn:hover {
+                background: #fff;
+                transform: scale(1.05);
+            }
+
+            footer {
+                background: #d4d4d428;
+                text-align: center;
+                padding: 16px 0;
+                font-size: 13px;
+                color: #888;
+                letter-spacing: 1px;
+            }
+
+            footer a {
+                color: #666;
+                text-decoration: none;
+                margin: 0 8px;
+            }
+
+            footer a:hover {
+                color: #333;
+            }
+
+            @media (max-width: 768px) {
+                .hero {
+                    padding: 32px 0 24px;
+                }
+
+                .hero_img {
+                    height: 90px;
+                }
+
+                .hero_text {
+                    font-size: 18px;
+                    letter-spacing: 4px;
+                }
+
+                .projects {
+                    padding: 0 5%;
+                    gap: 14px;
+                }
+
+                .card {
+                    height: 140px;
+                }
+
+                .card_content {
+                    padding: 0 16px;
+                }
+
+                .card_thumb {
+                    height: 64px;
+                }
+
+                .card_title {
+                    font-size: 20px;
+                }
+
+                .card_btn {
+                    padding: 6px 20px;
+                    font-size: 13px;
+                }
+            }
+        </style>
+        <script>
+            lang = {
+                SCN: {
+                    100: "书同文，车同轨",
+                    101: "进入",
+                    102: "进入",
+                    0: "主页",
+                    1: "项目",
+                    2: "关于",
+                },
+                TCN: {
+                    100: "書同文，車同轨",
+                    101: "進入",
+                    102: "進入",
+                    0: "主頁",
+                    1: "項目",
+                    2: "關於",
+                },
+                WZ: {
+                    100: "書同文，車同轨",
+                    101: "走進",
+                    102: "走進",
+                    0: "主頁",
+                    1: "項目",
+                    2: "關於",
+                },
+                EN: {
+                    100: "Book Same, Train Same",
+                    101: "Enter",
+                    102: "Enter",
+                    0: "Home",
+                    1: "Projects",
+                    2: "About",
+                },
+                JP: {
+                    100: "文字は同じ、車輪の軌道も同じ",
+                    101: "入る",
+                    102: "入る",
+                    0: "ホーム",
+                    1: "プロジェクト",
+                    2: "について",
+                },
+                KR: {
+                    100: "책과 동일한 내용, 동일한 경로",
+                    101: "입구",
+                    102: "입구",
+                    0: "홈",
+                    1: "프로젝트",
+                    2: "정보",
+                },
+                TKR: {
+                    100: "冊과 同一한 內容, 同一한 經路",
+                    101: "入口",
+                    102: "入口",
+                    0: "홈",
+                    1: "프로젝트",
+                    2: "情報",
+                }
+            }
+            function langchange(ln){
+                nowlang = ln
+                console.log(nowlang)
+                chlangtx()
+            }
+            function chlangtx(){
+                const currentLang = lang[nowlang];
+                if (!currentLang) {
+                    console.warn(`Language Invalid`);
+                    nowlang = 'SCN';
+                    return
+                }
+                
+                for (let k in currentLang) {
+                    const el = document.getElementById(`lx_${k}`);
+                    if (el) {
+                        el.textContent = currentLang[k];
+                    } else {
+                        console.warn(`Invalid ID`);
+                    }
+                }
+            }
+            window.onload = function(){
+                langchange('SCN')
+            }
+        </script>
+    </head>
+    <body>
+        <nav>
+            <ul class="l">
+                <li>
+                    <img
+                        src="./img/mainlogo.jpg"
+                        alt=""
+                        draggable="false"
+                        oncontextmenu="return false;"
+                        onselectstart="return false;"
+                    >
+                </li>
+                <li id="lx_0">主页</li>
+                <li id="lx_1">项目</li>
+                <li id="lx_2">关于</li>
+            </ul>
+            <ul class="r">
+                <li>
+                    <select name="" id="langchange" required onchange="langchange(document.getElementById('langchange').value);">
+                        <option value="SCN">简体中文</option>
+                        <option value="TCN">繁體中文</option>
+                        <option value="WZ">溫州話</option>
+                        <option value="EN">English</option>
+                        <option value="JP">日本語</option>
+                        <option value="KR">한국어</option>
+                        <option value="TKR">正韓國語</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+        <div class="main">
+            <div class="hero">
+                <img
+                    src="./img/晓柯同文馆黑.png"
+                    alt=""
+                    class="hero_img"
+                    draggable="false"
+                    oncontextmenu="return false;"
+                    onselectstart="return false;"
+                >
+                <p class="hero_text" id="lx_100">书同文，车同轨</p>
+            </div>
+
+            <div class="projects">
+                <div class="card" onclick="location.href='./p/lvcs/index.html'">
+                    <div class="card_bg" style="background-image: url('./p/lvcs/img/title1.png')"></div>
+                    <div class="card_overlay"></div>
+                    <div class="card_content">
+                        <div class="card_left">
+                            <img
+                                src="./img/yokologo.png"
+                                alt=""
+                                class="card_thumb"
+                                draggable="false"
+                                oncontextmenu="return false;"
+                                onselectstart="return false;"
+                            >
+                        </div>
+                        <span class="card_btn" id="lx_102" onclick="location.href='./p/lvcs/index.html'">进入</span>
+                    </div>
+                </div>
+
+                <div class="card" onclick="location.href='./p/atas/index.html'">
+                    <div class="card_bg" style="background-image: url('./p/atas/img/無題258_20260811220735.png')"></div>
+                    <div class="card_overlay"></div>
+                    <div class="card_content">
+                        <div class="card_left">
+                            <img
+                                src="./img/logo2.png"
+                                alt=""
+                                class="card_thumb"
+                                draggable="false"
+                                oncontextmenu="return false;"
+                                onselectstart="return false;"
+                            >
+                        </div>
+                        <span class="card_btn" id="lx_101" onclick="location.href='./p/atas/index.html'">进入</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <footer>
+        <span>Copyright 晓柯同文馆 2025~2026</span><br>
+        <span>Webpage by Hansha</span>
+    </footer>
+</html>

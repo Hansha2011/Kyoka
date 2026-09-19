@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ラブコメスイッチ（恋爱喜剧突转）</title>
+    <style>
+        @import url("https://fontsapi.zeoseven.com/811/main/result.css");
+
+        * {
+            transition: all .3s ease;
+        }
+
+        body {
+            margin: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            touch-action: manipulation;
+        }
+
+        .logo_place {
+            min-height: 100vh;
+            min-height: 100dvh;
+            width: auto;
+            background: plum;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+
+        .nopl1 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .nopl2 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 20%);
+            transform-origin: center center;
+        }
+
+        .nopl3 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(5%, 90%);
+            transform-origin: center center;
+        }
+
+        .nopl4 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-105%, 90%);
+            transform-origin: center center;
+        }
+
+        .nopl5 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-180%, 275%);
+            transform-origin: center center;
+        }
+
+        .nopl6 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-80%, 275%);
+            transform-origin: center center;
+        }
+
+        .nopl7 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(40%, 275%);
+            transform-origin: center center;
+        }
+
+        .nopl8 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-170%, 425%);
+            /*filter: grayscale(90%);*/
+            transform-origin: center center;
+        }
+
+        .nopl9 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-70%, 425%);
+            transform-origin: center center;
+        }
+
+        .nopl10 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(30%, 425%);
+            transform-origin: center center;
+        }
+
+        .noplt1 {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: 12345;
+        }
+
+        .img_title {
+            height: 99.8vh;
+            height: 99.8dvh;
+            -webkit-touch-callout: none;
+        }
+
+        @keyframes a {
+            0% {
+                transform: translate(-50%, 30%);
+            }
+            50% {
+                transform: translate(-50%, 18%);
+            }
+            100% {
+                transform: translate(-50%, 30%);
+            }
+        }
+
+        @keyframes b {
+            0% {
+                transform: translate(-50%, 90%) scale(0.95);
+            }
+            50% {
+                transform: translate(-50%, 90%) scale(1.05);
+            }
+            100% {
+                transform: translate(-50%, 90%) scale(0.95);
+            }
+        }
+
+        .img_movement {
+            animation: a 8s alternate infinite;
+            height: 40vh;
+            -webkit-touch-callout: none;
+        }
+
+        .img_dlmain {
+            /*
+                animation: b 4s alternate infinite;
+            */
+            height: 10vh;
+            -webkit-touch-callout: none;
+            z-index: 0;
+        }
+
+        .img_dlsub {
+            /*
+                animation: b 4s alternate infinite;
+            */
+            height: 7.5vh;
+            -webkit-touch-callout: none;
+        }
+
+        .menu_btn {
+            position: fixed;
+            top: 2vh;
+            right: 2vh;
+            height: 5vh;
+            z-index: 9999;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+        }
+
+        @media (hover: hover) {
+            .pbtn1:hover {
+                transform: translate(5%, 90%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .pbtn2:hover {
+                transform: translate(-105%, 90%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .pbtn3:hover {
+                transform: translate(-180%, 275%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .pbtn4:hover {
+                transform: translate(-80%, 275%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .pbtn5:hover {
+                transform: translate(40%, 275%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .pbtn6:hover {
+                transform: translate(-170%, 425%) translateY(-5px);
+            }
+            .pbtn7:hover {
+                transform: translate(-70%, 425%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .pbtn8:hover {
+                transform: translate(30%, 425%) translateY(-5px);
+                filter: grayscale(40%) opacity(90%);
+            }
+            .menu_btn:hover {
+                transform: scale(1.1);
+                filter: brightness(1.15);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu_btn {
+                height: 5vh;
+                top: 1.5vh;
+                right: 1.5vh;
+            }
+
+            .img_movement {
+                height: 32vh;
+            }
+
+            .img_dlmain {
+                height: 6vh;
+            }
+
+            .img_dlsub {
+                height: 4.5vh;
+            }
+
+            .nopl3 {
+                transform: translate(-50%, 100%);
+            }
+
+            .nopl4 {
+                transform: translate(-50%, 220%);
+            }
+
+            .nopl5 {
+                transform: translate(-50%, 420%);
+            }
+
+            .nopl6 {
+                transform: translate(-50%, 530%);
+            }
+
+            .nopl7 {
+                transform: translate(-50%, 640%);
+            }
+
+            .nopl8 {
+                transform: translate(-50%, 750%);
+            }
+
+            .nopl9 {
+                transform: translate(-50%, 860%);
+            }
+
+            .nopl10 {
+                transform: translate(-50%, 970%);
+            }
+
+            @media (hover: hover) {
+                .pbtn1:hover {
+                    transform: translate(-50%, 100%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+
+                .pbtn2:hover {
+                    transform: translate(-50%, 220%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+
+                .pbtn3:hover {
+                    transform: translate(-50%, 420%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+
+                .pbtn4:hover {
+                    transform: translate(-50%, 530%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+
+                .pbtn5:hover {
+                    transform: translate(-50%, 640%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+
+                .pbtn6:hover {
+                    transform: translate(-50%, 750%) translateY(-5px);
+                }
+
+                .pbtn7:hover {
+                    transform: translate(-50%, 860%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+
+                .pbtn8:hover {
+                    transform: translate(-50%, 970%) translateY(-5px);
+                    filter: grayscale(40%) opacity(90%);
+                }
+            }
+        }
+
+        .font_pixel1 {
+            font-family: "ChangBanDianSong 16 SC";
+        }
+
+        footer {
+            background: rgb(148, 103, 148);
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-overlay.hidden {
+            display: none;
+        }
+
+        .popup-image {
+            max-width: 90vw;
+            max-height: 70vh;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            touch-action: manipulation;
+            -webkit-touch-callout: none;
+        }
+
+        .popup-btns {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .popup-btn {
+            padding: 10px 28px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: "ChangBanDianSong 16 SC", sans-serif;
+            transition: all .2s ease;
+        }
+
+        .popup-btn-close {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .popup-btn-close:hover {
+            background: #ccc;
+        }
+
+        .popup-btn-nomore {
+            background: #b39ddb;
+            color: #fff;
+        }
+
+        .popup-btn-nomore:hover {
+            background: #9575cd;
+        }
+    </style>
+
+    <script>
+        function jumpto(url){
+            window.open(url)
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            var overlay = document.getElementById('popupOverlay');
+            if (!localStorage.getItem('lvcs_popup_hidden')) {
+                overlay.classList.remove('hidden');
+            }
+        });
+
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.add('hidden');
+        }
+
+        function hidePopupForever() {
+            localStorage.setItem('lvcs_popup_hidden', '1');
+            document.getElementById('popupOverlay').classList.add('hidden');
+        }
+    </script>
+</head>
+<body oncontextmenu="return false;">
+    <div id="popupOverlay" class="popup-overlay hidden">
+        <img
+            src="./img/b8b74a035286a00f3db54f372250f837_720.jpg"
+            alt=""
+            class="popup-image"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick="jumpto('authorize.html')"
+        >
+        <div class="popup-btns">
+            <button class="popup-btn popup-btn-close" onclick="closePopup()">关闭</button>
+            <button class="popup-btn popup-btn-nomore" onclick="hidePopupForever()">不再显示</button>
+        </div>
+    </div>
+    <div class="logo_place">
+        <img
+            src="./img/title1.png"
+            alt=""
+            class="img_title nopl1"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+        >
+        <img
+            src="./img/movement1.png"
+            alt=""
+            class="img_movement nopl2"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+        >
+        <!-- 以下是按钮们 ~ -->
+        <img
+            src="./img/pbtn2.png"
+            alt=""
+            class="img_dlmain nopl3 pbtn1"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("download.html")'
+        >
+        <img
+            src="./img/pbtn3.png"
+            alt=""
+            class="img_dlmain nopl4 pbtn2"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://novelgame.jp/games/show/14081?lang=JA")'
+        >
+
+            <!-- -->
+
+        <img
+            src="./img/pbtn8.png"
+            alt=""
+            class="img_dlsub nopl5 pbtn3"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://qm.qq.com/q/gXmDvzs4P6")'
+        >
+        <img
+            src="./img/pbtn7.png"
+            alt=""
+            class="img_dlsub nopl6 pbtn4"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("credits.html")'
+        >
+        <img
+            src="./img/pbtn6.png"
+            alt=""
+            class="img_dlsub nopl7 pbtn5"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("info.html")'
+        >
+
+            <!-- -->
+
+
+        <img
+            src="./img/pbtn5.png"
+            alt=""
+            class="img_dlsub nopl8 pbtn6"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("gonglue.html")'
+        >
+
+        <img
+            src="./img/pbtn4.png"
+            alt=""
+            class="img_dlsub nopl9 pbtn7"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("authorize.html")'
+        >
+        <img
+            src="./img/pbtn1.png"
+            alt=""
+            class="img_dlsub nopl10 pbtn8"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("https://piku.page/@hokori_4649_")'
+        >
+
+        <span class="font_pixel1 noplt1">Copyright 晓柯同文馆 2025~2026</span>
+
+        <img
+            src="./img/menu_button_close_backlog.png"
+            alt=""
+            class="menu_btn"
+            draggable="false"
+            oncontextmenu="return false;"
+            onselectstart="return false;"
+            onclick='jumpto("../../index.html")'
+        >
+    </div>
+</body>
+</html>
